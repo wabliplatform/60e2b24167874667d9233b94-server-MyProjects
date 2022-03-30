@@ -1,0 +1,744 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: lampralexandros@gmail.com
+  description: This is a sample openApi document
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://wabli.netlify.app/
+  title: TempApi
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+- description: solid-spoon
+  url: http://83.212.100.226:3001/v1
+security:
+- {}
+tags:
+- description: not yet ready
+  name: project
+- description: not yet ready
+  name: workpackage
+- description: not yet ready
+  name: deliverable
+- description: not yet ready
+  name: task
+- description: not yet ready
+  name: employee
+paths:
+  /project:
+    post:
+      operationId: createproject
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/project'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/project'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - project
+      x-eov-operation-handler: controllers/ProjectController
+  /project/{projectId}:
+    delete:
+      operationId: deleteproject
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - project
+      x-eov-operation-handler: controllers/ProjectController
+    get:
+      operationId: getproject
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/project'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - project
+      x-eov-operation-handler: controllers/ProjectController
+    put:
+      operationId: updateproject
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/project'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/project'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - project
+      x-eov-operation-handler: controllers/ProjectController
+  /project/getAll:
+    get:
+      operationId: getAllproject
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/project'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - project
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/ProjectController
+  /workpackage:
+    post:
+      operationId: createworkpackage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/workpackage'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/workpackage'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - workpackage
+      x-eov-operation-handler: controllers/WorkpackageController
+  /workpackage/{workpackageId}:
+    delete:
+      operationId: deleteworkpackage
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: workpackageId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - workpackage
+      x-eov-operation-handler: controllers/WorkpackageController
+    get:
+      operationId: getworkpackage
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: workpackageId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/workpackage'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - workpackage
+      x-eov-operation-handler: controllers/WorkpackageController
+    put:
+      operationId: updateworkpackage
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: workpackageId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/workpackage'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/workpackage'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - workpackage
+      x-eov-operation-handler: controllers/WorkpackageController
+  /workpackage/getAll:
+    get:
+      operationId: getAllworkpackage
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/workpackage'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - workpackage
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/WorkpackageController
+  /deliverable:
+    post:
+      operationId: createdeliverable
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/deliverable'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deliverable'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - deliverable
+      x-eov-operation-handler: controllers/DeliverableController
+  /deliverable/{deliverableId}:
+    delete:
+      operationId: deletedeliverable
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: deliverableId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - deliverable
+      x-eov-operation-handler: controllers/DeliverableController
+    get:
+      operationId: getdeliverable
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: deliverableId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deliverable'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - deliverable
+      x-eov-operation-handler: controllers/DeliverableController
+    put:
+      operationId: updatedeliverable
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: deliverableId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/deliverable'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deliverable'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - deliverable
+      x-eov-operation-handler: controllers/DeliverableController
+  /deliverable/getAll:
+    get:
+      operationId: getAlldeliverable
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/deliverable'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - deliverable
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/DeliverableController
+  /task:
+    post:
+      operationId: createtask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/task'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/task'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - task
+      x-eov-operation-handler: controllers/TaskController
+  /task/{taskId}:
+    delete:
+      operationId: deletetask
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: taskId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - task
+      x-eov-operation-handler: controllers/TaskController
+    get:
+      operationId: gettask
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: taskId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/task'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - task
+      x-eov-operation-handler: controllers/TaskController
+    put:
+      operationId: updatetask
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: taskId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/task'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/task'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - task
+      x-eov-operation-handler: controllers/TaskController
+  /task/getAll:
+    get:
+      operationId: getAlltask
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/task'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - task
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/TaskController
+  /employee:
+    post:
+      operationId: createemployee
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/employee'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/employee'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - employee
+      x-eov-operation-handler: controllers/EmployeeController
+  /employee/{employeeId}:
+    delete:
+      operationId: deleteemployee
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - employee
+      x-eov-operation-handler: controllers/EmployeeController
+    get:
+      operationId: getemployee
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/employee'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - employee
+      x-eov-operation-handler: controllers/EmployeeController
+    put:
+      operationId: updateemployee
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: employeeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/employee'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/employee'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - employee
+      x-eov-operation-handler: controllers/EmployeeController
+  /employee/getAll:
+    get:
+      operationId: getAllemployee
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/employee'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - employee
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/EmployeeController
+components:
+  schemas:
+    project:
+      example:
+        pWorkpackage:
+        - ""
+        - ""
+        pStart: pStart
+        pAbstract: pAbstract
+        pTitle: pTitle
+        pDeliverable:
+        - ""
+        - ""
+        pEnd: pEnd
+        _id: _id
+        pDuration: pDuration
+        pGA: pGA
+        pImage:
+          data: data
+          name: name
+        pWebsite: pWebsite
+      properties:
+        _id:
+          type: string
+        pImage:
+          $ref: '#/components/schemas/project_pImage'
+        pTitle:
+          type: string
+        pStart:
+          type: string
+        pWebsite:
+          type: string
+        pEnd:
+          type: string
+        pDuration:
+          type: string
+        pGA:
+          type: string
+        pAbstract:
+          type: string
+        pWorkpackage:
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/workpackage'
+            - type: string
+            x-one-of-name: workpackage
+          type: array
+        pDeliverable:
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/deliverable'
+            - type: string
+            x-one-of-name: deliverable
+          type: array
+      required:
+      - pAbstract
+      - pDeliverable
+      - pDuration
+      - pEnd
+      - pGA
+      - pImage
+      - pStart
+      - pTitle
+      - pWebsite
+      - pWorkpackage
+      type: object
+    workpackage:
+      example:
+        wName: wName
+        wPMs: wPMs
+        _id: _id
+        wRole: wRole
+      properties:
+        _id:
+          type: string
+        wName:
+          type: string
+        wPMs:
+          type: string
+        wRole:
+          type: string
+      required:
+      - wName
+      - wPMs
+      - wRole
+      type: object
+    deliverable:
+      example:
+        dDate: dDate
+        dStatus: dStatus
+        dName: dName
+        _id: _id
+      properties:
+        _id:
+          type: string
+        dName:
+          type: string
+        dStatus:
+          type: string
+        dDate:
+          type: string
+      required:
+      - dDate
+      - dName
+      - dStatus
+      type: object
+    task:
+      example:
+        tEnd: tEnd
+        tDescription: tDescription
+        tStart: tStart
+        tPMs: tPMs
+        tName: tName
+        _id: _id
+      properties:
+        _id:
+          type: string
+        tName:
+          type: string
+        tStart:
+          type: string
+        tEnd:
+          type: string
+        tPMs:
+          type: string
+        tDescription:
+          type: string
+      required:
+      - tDescription
+      - tEnd
+      - tName
+      - tPMs
+      - tStart
+      type: object
+    employee:
+      example:
+        eName: eName
+        eImage:
+          data: data
+          name: name
+        eSurname: eSurname
+        _id: _id
+        eProject:
+        - ""
+        - ""
+      properties:
+        _id:
+          type: string
+        eName:
+          type: string
+        eSurname:
+          type: string
+        eImage:
+          $ref: '#/components/schemas/project_pImage'
+        eProject:
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/project'
+            - type: string
+            x-one-of-name: project
+          type: array
+      required:
+      - eImage
+      - eName
+      - eProject
+      - eSurname
+      type: object
+    project_pImage:
+      example:
+        data: data
+        name: name
+      properties:
+        data:
+          type: string
+        name:
+          type: string
+      type: object
+      x-isSchemaOnly: "true"
