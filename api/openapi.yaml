@@ -666,11 +666,11 @@ components:
           type: string
         dName:
           type: string
-        dStatus:
-          type: string
         dDate:
           type: string
         dLeader:
+          type: string
+        dStatus:
           type: string
       required:
       - dDate
