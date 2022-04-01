@@ -12,7 +12,10 @@ wName:String ,
 wPMs:String , 
 
 
-wRole:String 
+wRole:String , 
+
+
+wLeader:String 
 
 
 

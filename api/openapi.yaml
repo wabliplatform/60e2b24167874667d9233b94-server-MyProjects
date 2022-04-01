@@ -632,6 +632,7 @@ components:
       type: object
     workpackage:
       example:
+        wLeader: wLeader
         wName: wName
         wPMs: wPMs
         _id: _id
@@ -645,7 +646,10 @@ components:
           type: string
         wRole:
           type: string
+        wLeader:
+          type: string
       required:
+      - wLeader
       - wName
       - wPMs
       - wRole
