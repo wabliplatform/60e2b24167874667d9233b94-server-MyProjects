@@ -652,6 +652,7 @@ components:
       type: object
     deliverable:
       example:
+        dLeader: dLeader
         dDate: dDate
         dStatus: dStatus
         dName: dName
@@ -665,8 +666,11 @@ components:
           type: string
         dDate:
           type: string
+        dLeader:
+          type: string
       required:
       - dDate
+      - dLeader
       - dName
       - dStatus
       type: object
