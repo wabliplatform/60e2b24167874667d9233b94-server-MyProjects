@@ -12,10 +12,10 @@ wName:String ,
 wPMs:String , 
 
 
-wRole:String , 
+wLeader:String , 
 
 
-wLeader:String 
+wRole:String 
 
 
 

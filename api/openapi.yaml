@@ -644,9 +644,9 @@ components:
           type: string
         wPMs:
           type: string
-        wRole:
-          type: string
         wLeader:
+          type: string
+        wRole:
           type: string
       required:
       - wLeader
