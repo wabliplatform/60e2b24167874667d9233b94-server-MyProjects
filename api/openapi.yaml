@@ -579,8 +579,8 @@ components:
         - ""
         pEnd: pEnd
         _id: _id
-        pDuration: pDuration
         pGA: pGA
+        pDuration: pDuration
         pImage:
           data: data
           name: name
@@ -594,15 +594,9 @@ components:
           type: string
         pStart:
           type: string
-        pWebsite:
-          type: string
         pEnd:
           type: string
-        pDuration:
-          type: string
         pGA:
-          type: string
-        pAbstract:
           type: string
         pWorkpackage:
           items:
@@ -611,6 +605,8 @@ components:
             - type: string
             x-one-of-name: workpackage
           type: array
+        pAbstract:
+          type: string
         pDeliverable:
           items:
             oneOf:
@@ -618,6 +614,10 @@ components:
             - type: string
             x-one-of-name: deliverable
           type: array
+        pWebsite:
+          type: string
+        pDuration:
+          type: string
       required:
       - pAbstract
       - pDeliverable

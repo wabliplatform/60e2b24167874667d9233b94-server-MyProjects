@@ -18,19 +18,10 @@ pTitle:String ,
 pStart:String , 
 
 
-pWebsite:String , 
-
-
 pEnd:String , 
 
 
-pDuration:String , 
-
-
 pGA:String , 
-
-
-pAbstract:String , 
 
 
 
@@ -44,6 +35,9 @@ pAbstract:String ,
 ]
 , 
 
+pAbstract:String , 
+
+
 
 
  pDeliverable: [ 
@@ -53,6 +47,12 @@ pAbstract:String ,
   }
 
 ]
+, 
+
+pWebsite:String , 
+
+
+pDuration:String 
 
 
 
